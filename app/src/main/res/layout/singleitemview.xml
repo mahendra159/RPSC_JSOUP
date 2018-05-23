@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/card_background_selector">
+
+    <TextView
+        android:id="@+id/snolabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/snolabel"
+        android:textColor="#ff7f7d7d"/>
+
+    <TextView
+        android:id="@+id/sno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/snolabel"
+        android:textColor="#ff7f7d7d"/>
+
+    <TextView
+        android:id="@+id/datelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/snolabel"
+        android:textStyle="bold"
+        android:text="@string/datelabel"
+        android:textColor="#ff7f7d7d"/>
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sno"
+        android:layout_toRightOf="@+id/datelabel"
+        android:textColor="#ff7f7d7d"/>
+
+    <TextView
+        android:id="@+id/examlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/datelabel"
+        android:textStyle="bold"
+        android:text="@string/examnamelabel"
+        android:textColor="#ff7f7d7d"/>
+
+    <TextView
+        android:id="@+id/examname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/datelabel"
+        android:layout_toRightOf="@+id/examlabel"
+        android:textColor="#ff7f7d7d"/>
+
+    <TextView
+        android:id="@+id/papernotelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/examname"
+        android:textStyle="bold"
+        android:text="@string/papernotelabel"
+        android:textColor="#ff7f7d7d"/>
+
+    <TextView
+        android:id="@+id/papernotetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/examname"
+        android:layout_toRightOf="@+id/papernotelabel"
+        android:textColor="#ff7f7d7d"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download"
+        android:id="@+id/btndwnload"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/button_background_selector"
+        android:textColor="#ff807e77" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        android:layout_alignParentBottom="true"
+        ads:adUnitId="@string/banner_ad_unit_id" />
+
+</RelativeLayout>

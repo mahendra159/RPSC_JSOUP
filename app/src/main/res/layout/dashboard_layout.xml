@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/master_root"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffdcdad2">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1">
+
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp"
+            android:stretchColumns="*">
+
+            <TableRow android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp">
+
+                <!--  Press Notes Button -->
+                <Button
+                    android:id="@+id/btn_press_notes"
+                    style="@style/DashboardButton"
+                    android:drawableTop="@drawable/btn_pressnotes"
+                    android:text="Press Notes"
+                    android:textColor="#ff7f7d7d"/>
+                />
+
+                <!--  Recruitment Button -->
+                <Button
+                    android:id="@+id/btn_recruitment"
+                    style="@style/DashboardButton"
+                    android:drawableTop="@drawable/btn_recruitment"
+                    android:text="Recruitment"
+                    android:textColor="#ff7f7d7d"/>
+
+                </TableRow>
+
+            <TableRow android:id="@+id/tableRow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+                <!--  Results Button -->
+                <Button
+                    android:id="@+id/btn_results"
+                    style="@style/DashboardButton"
+                    android:drawableTop="@drawable/btn_results"
+                    android:text="Results"
+                    android:textColor="#ff7f7d7d"/>
+
+                <!--  Old Papers Button -->
+                <Button
+                    android:id="@+id/btn_oldpapers"
+                    style="@style/DashboardButton"
+                    android:drawableTop="@drawable/btn_oldpapers"
+                    android:text="Old Papers"
+                    android:textColor="#ff7f7d7d"/>
+                </TableRow>
+            <TableRow android:id="@+id/tableRow3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+                <!--  Answer Keys Button -->
+                <Button
+                    android:id="@+id/btn_anskeys"
+                    style="@style/DashboardButton"
+                    android:drawableTop="@drawable/btn_anskeys"
+                    android:text="Answer Keys"
+                    android:textColor="#ff7f7d7d"/>
+
+                <Button
+                    android:id="@+id/btn_webview"
+                    style="@style/DashboardButton"
+                    android:drawableTop="@drawable/btn_webview"
+                    android:text="Web View"
+                    android:textColor="#ff7f7d7d"/>
+
+
+            </TableRow>
+
+            <!--
+            <TableRow android:id="@+id/tableRow4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <Button
+                    android:id="@+id/btn_rssFeeds"
+                    style="@style/DashboardButton"
+                    android:drawableTop="@drawable/btn_rssfeeds"
+                    android:text="RSS Feeds"
+                    android:textColor="#ff7f7d7d"/>
+
+
+
+
+            </TableRow>
+            -->
+
+        </TableLayout>
+
+
+
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id" />
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+    <!-- Include Action Bar -->
+    <!--   <include layout="@layout/actionbar_layout"/>  -->
+
+    <!--  Include Fragmented dashboard -->
+    <!--  <include layout="@layout/fragment_layout"/> -->
+
+    <!--  Include Footer -->
+    <!--  <include layout="@layout/footer_layout"/> -->

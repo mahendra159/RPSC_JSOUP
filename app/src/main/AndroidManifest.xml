@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rpsc.app.rpsc_jsoup" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/CustomActionBarTheme">
+        <!--android:theme="@style/AppTheme"-->
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.SplashScreen"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main activity -->
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.DashBoardActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.SingleItemView"
+            android:label="Press Note Detail">
+        </activity>
+
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.PressNoteActivity"
+            android:label="Press Notes">
+        </activity>
+
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.RecruitmentActivity"
+            android:label="Recruitment">
+        </activity>
+
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.RecruitmentItemView"
+            android:label="Recruitment Detail">
+        </activity>
+
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.ResultActivity"
+            android:label="Result">
+        </activity>
+
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.ResultItemView"
+            android:label="Result Detail">
+        </activity>
+
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.OldPaperActivity"
+            android:label="Old Papers">
+        </activity>
+
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.OldPaperItemView"
+            android:label="Old Paper Detail">
+        </activity>
+
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.AnswerKeyActivity"
+            android:label="Answer Keys">
+        </activity>
+
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.AnswerKeyItemView"
+            android:label="Answer Key Detail">
+        </activity>
+
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.WebViewActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:label="RPSC">
+        </activity>
+
+        <activity
+            android:name="com.rpsc.app.rpsc_jsoup.RssActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:label="RSS Feeds">
+        </activity>
+
+        <!-- This meta-data tag is required to use Google Play Services. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+
+    </application>
+
+</manifest>
