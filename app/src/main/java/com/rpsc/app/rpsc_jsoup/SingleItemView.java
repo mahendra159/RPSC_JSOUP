@@ -5,9 +5,13 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -305,10 +309,18 @@ public class SingleItemView extends ActionBarActivity {
             File file = new File(Environment.getExternalStorageDirectory().toString() + "/RPSC/Press_Notes/"+file_name);
 
             if (file.exists()) {
-                Uri path = Uri.fromFile(file);
+                //Uri path = Uri.fromFile(file);
+                Uri path = GenericFileProvider.getUriForFile(SingleItemView.this, getApplicationContext().getPackageName() + ".provider", file);
+                //com.rpsc.app.rpsc_jsoup.com.rpsc.app.rpsc_jsoup.provider
+                /*Uri photoURI = FileProvider.getUriForFile(MainActivity.this,
+                        BuildConfig.APPLICATION_ID + ".provider",
+                        createImageFile());*/
                 final Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setDataAndType(path, "application/pdf");
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+                if (haveStoragePermission()){
 
                 try {
 
@@ -327,12 +339,11 @@ public class SingleItemView extends ActionBarActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
 
-                                   startActivity(intent);
+                                    startActivity(intent);
                                 }
                             }).show();
                     //startActivity(intent);
-                }
-                catch (ActivityNotFoundException e) {
+                } catch (ActivityNotFoundException e) {
                     //Toast.makeText(SingleItemView.this, "No Application Available to View PDF",
                     //        Toast.LENGTH_SHORT).show();
                     new AlertDialog.Builder(SingleItemView.this).setIcon(android.R.drawable.ic_dialog_info)
@@ -347,9 +358,32 @@ public class SingleItemView extends ActionBarActivity {
                                 }
                             }).show();
                 }
+             }
+            }
+        }
+
+
+        public  boolean haveStoragePermission() {
+            if (Build.VERSION.SDK_INT >= 23) {
+                if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    Log.e("Permission error","You have permission");
+                    return true;
+                } else {
+
+                    Log.e("Permission error","You have asked for permission");
+                    ActivityCompat.requestPermissions(SingleItemView.this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                    return false;
+                }
+            }
+            else { //you dont need to worry about these stuff below api level 23
+                Log.e("Permission error","You already have the permission");
+                return true;
             }
         }
 
     }
+
+
 
 }
